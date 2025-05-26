@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "name": "expo.push.notification.client",
+      "type": "com.github.flanchanowo.properties.ExpoPushNotificationClientProperties",
+      "sourceType": "com.github.flanchanowo.properties.ExpoPushNotificationClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "expo.push.notification.client.baseUri",
+      "type": "java.lang.String",
+      "description": "The base URL of the Expo push notification client.",
+      "sourceType": "com.github.flanchanowo.properties.ExpoPushNotificationClientProperties",
+      "defaultValue": "https://exp.host/--/api/v2/"
+    },
+    {
+      "name": "expo.push.notification.client.accessToken",
+      "type": "java.lang.String",
+      "description": "Access token for the Expo push notification client.(optional)",
+      "sourceType": "com.github.flanchanowo.properties.ExpoPushNotificationClientProperties"
+    }
+  ],
+  "hints": []
+}

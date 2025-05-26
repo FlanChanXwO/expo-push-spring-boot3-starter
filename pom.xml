@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.flanchanowo</groupId>
+    <artifactId>expo-push-spring-boot3-starter</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
+    <url>https://github.com/FlanChanXwO/expo-push-spring-boot3-starter</url>
+    <description>
+        expo-push-spring-boot3-starter is a Spring Boot3-based server-side SDK starter for Expo push notifications. It provides the ExpoPushNotificationTemplate class via Spring dependency injection, greatly simplifying the integration and use of Expo push services.
+        You can find more information on github(https://github.com/FlanChanXwO/expo-push-spring-boot3-starter).
+    </description>
+    <scm>
+        <url>https://github.com/FlanChanXwO/expo-push-spring-boot3-starter-java</url>
+        <connection>scm:git:https://github.com/FlanChanXwO/expo-push-spring-boot3-starter.git</connection>
+        <developerConnection>scm:git:https://github.com/FlanChanXwO/expo-push-spring-boot3-starter.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id><![CDATA[Scarlet FlanChan <badapple495@outlook.com>]]></id>
+            <name>Scarlet FlanChan</name>
+            <email>badapple495@outlook.com</email>
+            <url>https://github.com/FlanChanXwO/expo-push-spring-boot3-starter</url>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <expo.push.server.sdk.version>0.1.1</expo.push.server.sdk.version>
+        <spring.boot.autoconfigure.version>3.5.0</spring.boot.autoconfigure.version>
+        <lombok.version>1.18.32</lombok.version>
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <maven.source.plugin.version>2.2.1</maven.source.plugin.version>
+        <maven.javadoc.plugin.version>2.9.1</maven.javadoc.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <central.publishing.maven.plugin.version>0.5.0</central.publishing.maven.plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.flanchanxwo</groupId>
+            <artifactId>expo-server-sdk-java</artifactId>
+            <version>${expo.push.server.sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring.boot.autoconfigure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <!-- Source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven.javadoc.plugin.version}</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc -->
+            <!-- Gpg Signature -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven.gpg.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${central.publishing.maven.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>central</id>
+            <url>https://central.sonatype.com/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
