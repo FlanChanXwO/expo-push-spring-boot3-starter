@@ -29,7 +29,7 @@ Add the dependency to your Maven project:
 ```xml
 
 <dependency>
-    <groupId>com.github.flanchanowo</groupId>
+    <groupId>io.github.flanchanxwo</groupId>
     <artifactId>expo-push-spring-boot3-starter</artifactId>
     <version>0.1.0</version>
 </dependency>

@@ -26,7 +26,7 @@ Maven 项目中添加依赖：
 ```xml
 
 <dependency>
-    <groupId>com.github.flanchanowo</groupId>
+    <groupId>io.github.flanchanxwo</groupId>
     <artifactId>expo-push-spring-boot-starter</artifactId>
     <version>0.1.0</version>
 </dependency>
