@@ -7,6 +7,8 @@
 the `ExpoPushNotificationTemplate` class via Spring dependency injection, greatly simplifying the integration and use of
 Expo push services.
 
+**Language: [简体中文(Chinese)](readme_zh.md)**
+
 ---
 
 ✨ **Features**
